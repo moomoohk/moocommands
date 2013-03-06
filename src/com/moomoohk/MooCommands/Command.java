@@ -94,7 +94,7 @@ public abstract class Command<T>
 	 * Will return a String with all the commands and their help/usage messages.
 	 * 
 	 * @param HTML
-	 *            True you want it formatted in HTML, false if not.
+	 *            True if you want it formatted in HTML, false if not.
 	 * @return A String with all the command and their help/usage messages. If
 	 *         no commands are in the list "No commands" will be returned.
 	 */
