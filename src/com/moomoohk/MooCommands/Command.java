@@ -156,7 +156,7 @@ public abstract class Command<T>
 	public static String parseCommand(String command)
 	{
 		if (command.trim().contains(" "))
-			return command.trim().substring(command.indexOf("/"), command.indexOf(" "));
+			return command.trim().substring(command.trim().indexOf(0)=='/'?command.indexOf("/"):0, command.indexOf(" ")).trim();
 		return command;
 	}
 
@@ -222,7 +222,6 @@ public abstract class Command<T>
 	 */
 	public static Command<?> getCommand(String command)
 	{
-		command = command.charAt(0) == '/' ? command : "/" + command;
 		for (Command<?> temp : commands)
 			if (temp.getCommand().equals(command))
 				return temp;
