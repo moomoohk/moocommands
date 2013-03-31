@@ -1,6 +1,8 @@
 package com.moomoohk.MooCommands;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  * @author      Meshulam Silk <moomoohk@ymail.com>
@@ -243,6 +245,7 @@ public abstract class Command<T>
 	 */
 	public void checkAndExecute(String[] params)
 	{
+		this.message="";
 		try
 		{
 			if (check(this.handler, params))
@@ -334,4 +337,28 @@ public abstract class Command<T>
 	 *            A String array of parameters.
 	 */
 	public abstract void execute(T handler, String[] params);
+
+	/**
+	 * This method receives a String array of parameters which contain flags (which are formatted "flag:value") and will create a HashMap<String, String> which contains the flags as keys and their values.
+	 * @param params String array of parameters where each place contains a flag.
+	 * @return A HashMap<String, String> which contains the flags and their values.
+	 */
+	public static HashMap<String, String> parseFlags(String[] params)
+	{
+		HashMap<String, String> flags=new HashMap<String, String>();
+		for(String param:params)
+		{
+			Scanner sc=new Scanner(param);
+			sc.useDelimiter(":");
+			try
+			{
+				flags.put(sc.next().trim(), sc.next().trim());
+			}
+			catch(Exception e)
+			{
+				throw new IllegalStateException("Incorrect syntax!");
+			}
+		}
+		return flags;
+	}
 }
