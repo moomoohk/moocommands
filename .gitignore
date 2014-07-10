@@ -1,0 +1,3 @@
+bin/
+*.class
+Build/.DS_Store
