@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * This class manages all the {@link Command}s created.
  * 
- * @author Meshulam Silk <moomoohk@ymail.com>
+ * @author Meshulam Silk (moomoohk@ymail.com)
  * @version 1.0
  * @since 2013-11-24
  */
@@ -81,7 +81,7 @@ public final class CommandsManager
 	 * Will parse the parameters from an input String into a String array.<br>
 	 * For example: "/test param1 param2" will return {"param1", "param2"}.
 	 * 
-	 * @param command
+	 * @param params
 	 *            The input to parse.
 	 * @return The parsed parameters.
 	 * @throws InvalidCommandException
@@ -98,6 +98,7 @@ public final class CommandsManager
 		int i = 0;
 		while (scanner.hasNext())
 			newParams[i++] = scanner.next();
+		scanner.close();
 		return newParams;
 	}
 
@@ -131,18 +132,15 @@ public final class CommandsManager
 	{
 		HashMap<String, String> flags = new HashMap<String, String>();
 		for (String param : params)
-		{
-			Scanner sc = new Scanner(param);
-			sc.useDelimiter(":");
-			try
+			try (Scanner sc = new Scanner(param))
 			{
+				sc.useDelimiter(":");
 				flags.put(sc.next().trim(), sc.next().trim());
 			}
 			catch (Exception e)
 			{
 				throw new IllegalStateException("Incorrect syntax!");
 			}
-		}
 		return flags;
 	}
 }

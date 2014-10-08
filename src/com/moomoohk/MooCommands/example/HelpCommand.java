@@ -6,6 +6,9 @@ import com.moomoohk.MooCommands.Command;
 import com.moomoohk.MooCommands.CommandsManager;
 
 /**
+ * Displays help messages for registered commands.
+ * 
+ * This class is intended to serve as an example but is completely functional and safe to use in any program.
  * 
  * @author Meshulam Silk (moomoohk@ymail.com)
  * @since Jul 17, 2014

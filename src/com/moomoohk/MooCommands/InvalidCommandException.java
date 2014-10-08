@@ -3,7 +3,7 @@ package com.moomoohk.MooCommands;
 /**
  * Thrown when an invalid {@link Command} is created.
  * 
- * @author Meshulam Silk <moomoohk@ymail.com>
+ * @author Meshulam Silk (moomoohk@ymail.com)
  * @version 1.0
  * @since 2013-11-24
  */

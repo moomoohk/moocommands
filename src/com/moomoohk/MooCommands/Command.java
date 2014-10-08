@@ -5,7 +5,7 @@ import java.awt.Color;
 /**
  * This abstract class represents an executable command.
  * 
- * @author Meshulam Silk <moomoohk@ymail.com>
+ * @author Meshulam Silk (moomoohk@ymail.com)
  * @version 2.0
  * @since 2013-11-24
  */
@@ -89,7 +89,7 @@ public abstract class Command
 	 * The method that checks the validity of a parameters String array for this command.<br>
 	 * You should never really have to explicitly call this method. Use {@link #checkAndExecute(String[])} instead.
 	 * <p>
-	 * The default check method simply checks if the length of the String array of parameters falls within the bounds of the {@link #minParams} and {@link #maxParams} of this command.
+	 * The default check method simply checks if the length of the String array of parameters falls within the bounds of {@link #getMinParams()} and {@link #getMaxParams()} of this command.
 	 * 
 	 * @param params
 	 *            A String array of parameters.
@@ -154,6 +154,7 @@ public abstract class Command
 	 * 
 	 * @return A String containing information about this command.
 	 */
+	@Override
 	public String toString()
 	{
 		return getCommand() + ": " + (getHelpMessage().length() == 0 ? "<no help message specified>" : getHelpMessage()) + ", Usage: " + (getUsage().length() == 0 ? "<none specified>" : getUsage());
