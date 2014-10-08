@@ -6,6 +6,4 @@ An awesome command processing tool.
 
 You can download it from [here](https://github.com/moomoohk/MooCommands/blob/master/Build/MooCommands.jar?raw=true).
 
-You can find a demo video I made [here](http://www.youtube.com/watch?v=i-dVkZ1acJQ).
-
-Get the JavaDocs [here](https://github.com/moomoohk/MooCommands/blob/master/JavaDocs.zip?raw=true)
+Get the JavaDocs [here](https://github.com/moomoohk/MooCommands/blob/master/docs.zip?raw=true)
