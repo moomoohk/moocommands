@@ -2,8 +2,6 @@ package com.moomoohk.MooCommands;
 
 import java.awt.Color;
 
-import com.moomoohk.MooCommands.CommandsManager;
-
 /**
  * This abstract class represents an executable command.
  *
@@ -77,6 +75,7 @@ public abstract class Command
 	 *
 	 * @param params
 	 *            A String array of the parameters you'd like to execute this command with.
+	 * @return The command's output message
 	 */
 	public String checkAndExecute(String[] params)
 	{
@@ -115,8 +114,6 @@ public abstract class Command
 	 * <p>
 	 * Simply put whatever code you'd like to be run in here, and when this command is executed the code will be run.
 	 *
-	 * @param handler
-	 *            The command handler you're working with.
 	 * @param params
 	 *            A String array of parameters.
 	 */
@@ -152,7 +149,7 @@ public abstract class Command
 
 	/**
 	 * Returns a String containing information about this command using the following format:<br>
-	 * [This command as a String]: [This command's help message or "<no help message specified>" if none specified], Usage: [This command's usage or "<none specified>" if none specified]
+	 * [This command as a String]: [This command's help message or "&lt;no help message specified&gt;" if none specified], Usage: [This command's usage or "&lt;none specified&gt;" if none specified]
 	 *
 	 * @return A String containing information about this command.
 	 */

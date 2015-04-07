@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * This class manages all the {@link Command}s created.
- * 
+ *
  * @author Meshulam Silk (moomoohk@ymail.com)
  * @version 1.0
  * @since 2013-11-24
@@ -19,7 +19,7 @@ public final class CommandsManager
 	 * Adds a {@link Command} to the commands list. <br>
 	 * This method should never be called explicitly.<br>
 	 * Commands will call this method from their constructor.
-	 * 
+	 *
 	 * @param command
 	 *            Command to add to the list.
 	 */
@@ -31,7 +31,7 @@ public final class CommandsManager
 
 	/**
 	 * Finds a {@link Command} in the commands list.
-	 * 
+	 *
 	 * @param command
 	 *            The {@link Command} to find in String form.
 	 *            <p>
@@ -50,7 +50,7 @@ public final class CommandsManager
 
 	/**
 	 * Gets the commands list.
-	 * 
+	 *
 	 * @return The commands list.
 	 */
 	public static ArrayList<Command> getAllCommands()
@@ -60,7 +60,7 @@ public final class CommandsManager
 
 	/**
 	 * Executes a {@link Command} in the commands list.
-	 * 
+	 *
 	 * @param commandAndParams
 	 *            The command in String form and any parameters to execute with.<br>
 	 *            Theoretically this can be raw user input.
@@ -80,12 +80,10 @@ public final class CommandsManager
 	/**
 	 * Will parse the parameters from an input String into a String array.<br>
 	 * For example: "/test param1 param2" will return {"param1", "param2"}.
-	 * 
+	 *
 	 * @param params
 	 *            The input to parse.
 	 * @return The parsed parameters.
-	 * @throws InvalidCommandException
-	 *             If the input String does not contain a command and parameters.
 	 */
 	public static String[] parseParams(String params)
 	{
@@ -104,7 +102,7 @@ public final class CommandsManager
 
 	/**
 	 * Receives a String array and combines all the indexes into one String object.
-	 * 
+	 *
 	 * @param params
 	 *            A String array of parameters.
 	 * @param start
@@ -122,11 +120,11 @@ public final class CommandsManager
 	}
 
 	/**
-	 * This method receives a String array of parameters which contain flags (which are formatted "flag:value") and will create a HashMap<String, String> which contains the flags as keys and their values.
-	 * 
+	 * This method receives a String array of parameters which contain flags (which are formatted "flag:value") and will create a HashMap&lt;String, String&gt; which contains the flags as keys and their values.
+	 *
 	 * @param params
 	 *            String array of parameters where each place contains a flag.
-	 * @return A HashMap<String, String> which contains the flags and their values.
+	 * @return A HashMap&lt;String, String&gt; which contains the flags and their values.
 	 */
 	public static HashMap<String, String> parseFlags(String[] params)
 	{
@@ -137,10 +135,10 @@ public final class CommandsManager
 				sc.useDelimiter(":");
 				flags.put(sc.next().trim(), sc.next().trim());
 			}
-			catch (Exception e)
-			{
-				throw new IllegalStateException("Incorrect syntax!");
-			}
+		catch (Exception e)
+		{
+			throw new IllegalStateException("Incorrect syntax!");
+		}
 		return flags;
 	}
 }
